@@ -1,4 +1,5 @@
 package samePackage.constants;
 
-public enum MyClass {
+public class MyClass {
+    public static final String STORE="/store";
 }

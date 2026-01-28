@@ -1,30 +1,30 @@
 Feature: Login Functionality
 
   In order to do internet shopping
-  As a valid Askomd online shopping customer
+  As a valid AskOmdCh online shopping customer
   I want to login successfully
 
-  Scenario: Login Successful
-
+  Background: login
     Given I am in the login page
-    When I enter valid "josue" with "niyonkunda20"
-    Then I should be taken to the Overview page
 
-  Scenario: Login UnSuccessfulWithInvalidPassword
+  Scenario Outline: Login validCredentials
+    When I enter valid "<userName>" with "<Password>"
+    Then I should see the status alertMessage "<message>"
+    Examples:
+      | userName        | Password     | message                                              |
+      | josue           | niyonkunda20 | Hello josue (not josue? Log out)                     |
+      | josueniyonkunda | niyonkunda20 | Hello josueniyonkunda (not josueniyonkunda? Log out) |
 
-    Given I am in the login page
-    When I enter invalid password "josue" with "niyon"
-    Then I should not be taken to the Overview page
 
-  Scenario: Login UnSuccessfulWithInvalidUsername
+  Scenario Outline: Login InvalidCredentials
+    When I enter valid "<userName>" with "<Password>"
+    Then I should see the errorMessage "<message>"
+    Examples:
+      | userName        | Password     | message                                                                                  |
+      | josue           | niyon        | Error: The password you entered for the username josue is incorrect. Lost your password? |
+      |                 | niyonkunda20 | Error: Username is required.                                                             |
+      | josueniyonkunda |              | Error: The password field is empty.                                                      |
 
-    Given I am in the login page
-    When I enter invalid username "josueniyonkunda" with "niyonkunda20"
-    Then I should not be able to login to the page
 
-  Scenario: Login UnSuccessfulWithEmptyCredentials
 
-    Given I am in the login page
-    When I enter invalid with empty credentials "" with ""
-    Then I should not be logged to the login page
 
