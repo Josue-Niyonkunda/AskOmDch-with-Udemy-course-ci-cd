@@ -10,6 +10,6 @@ jobs:
         uses: actions/checkout@v6.0.2
         
       - name: run test
-        run: mvn clear test
+        run: mvn clean test
    
  
