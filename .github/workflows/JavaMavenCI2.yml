@@ -37,9 +37,9 @@ jobs:
       - name: Build package
         run: mvn -DskipTests package
 
-      # 6. Upload the WAR artifact
-      - name: Upload WAR artifact       
+      # 6. Upload the JAR artifact
+      - name: Upload JAR artifact       
         uses: actions/upload-artifact@v4
         with:
-          name: digitalbank-war
-          path: target/*.war
+          name: digitalbank-jar
+          path: target/*.jar
