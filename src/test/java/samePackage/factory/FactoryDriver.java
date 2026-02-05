@@ -3,11 +3,12 @@ package samePackage.factory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class FactoryDriver {
 
-    public static WebDriver initializeDriver(String browser) {
+    public static WebDriver initializeDriver(String browser, ChromeOptions options) {
 
         if (browser == null || browser.isBlank()) {
             throw new RuntimeException(
