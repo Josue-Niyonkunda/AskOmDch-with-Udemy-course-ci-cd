@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: checkout codes
-        uses: actions/checkout@6
+        uses: actions/checkout@v6.0.2
         
       - name: run test
         run: mvn clear test
