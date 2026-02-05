@@ -14,7 +14,7 @@ public class CartPage extends BasePage{
         super(driver);
     }
     public String viewCarts(){
-        WebElement cartValueHolder= driver.findElements(By.cssSelector("span[class='count']")).getFirst();
+        WebElement cartValueHolder= driver.findElements(By.cssSelector("span[class='count']")).get(0);
        return cartValueHolder.getText();
 
     }
