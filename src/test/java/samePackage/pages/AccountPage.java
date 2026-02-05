@@ -20,13 +20,15 @@ public class AccountPage extends BasePage{
         driver.findElement(By.id("password")).sendKeys(password);
         driver.findElement(By.cssSelector(" p:nth-child(3) button")).click();
     }
-    public String SuccessfullyLoginStatusMessage(){
-        WebElement text =wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(" p:nth-child(2)"))));
-        Objects.requireNonNull(text).isDisplayed();
-        System.out.println(text.getText());
-        return text.getText();
-
+    public String SuccessfullyLoginStatusMessage() {
+        WebElement text = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.cssSelector("p:nth-child(2)"))
+        );
+        String message = text.getText();
+        System.out.println(message);
+        return message;
     }
+
     public String errorLoginStatusMessage(){
         WebElement text= wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(".woocommerce-error"))));
         System.out.println(text.getText());
