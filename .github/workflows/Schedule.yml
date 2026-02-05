@@ -1,0 +1,15 @@
+name: test run on schedule event
+on:
+ push: 
+       branches: [main]
+jobs:
+  buld:
+    runs-on: windows-latest
+    steps:
+      - name: checkout codes
+        uses: actions/checkout@1
+        
+      - name: run test
+        run: mvn clear test
+   
+ 
