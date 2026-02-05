@@ -22,6 +22,7 @@ public class AccountPage extends BasePage{
     }
     public String SuccessfullyLoginStatusMessage(){
         WebElement text =wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(" p:nth-child(2)"))));
+        Objects.requireNonNull(text).isDisplayed();
         System.out.println(text.getText());
         return text.getText();
 
