@@ -13,7 +13,7 @@ jobs:
     steps:
       # 1. Checkout the latest code
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.2
 
       # 2. Set up JDK 17 with Maven caching
       - name: Set up JDK 17
