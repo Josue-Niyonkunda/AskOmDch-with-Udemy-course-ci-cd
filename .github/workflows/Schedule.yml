@@ -6,7 +6,7 @@ jobs:
   buld:
     runs-on: windows-latest
     steps:
-      - name: checkout codes
+      - name: checkout 
         uses: actions/checkout@v6.0.2
         
       - name: run test
